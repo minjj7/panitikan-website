@@ -29,19 +29,11 @@
       pointer-events: none;
     }
 
-    /* PEN ANIMATION (slower smoother) */
+    /* PEN ANIMATION */
     @keyframes penMove {
-      0% {
-        left: 0;
-        transform: rotate(-10deg);
-      }
-      50% {
-        transform: rotate(8deg);
-      }
-      100% {
-        left: 120px;
-        transform: rotate(-10deg);
-      }
+      0% { left: 0; transform: rotate(-10deg); }
+      50% { transform: rotate(8deg); }
+      100% { left: 120px; transform: rotate(-10deg); }
     }
 
     .animate-pen {
@@ -65,38 +57,29 @@
       </div>
     </div>
 
-    <p class="mt-6 text-lg font-semibold text-gray-700">
-      Ipinoproseso...
+    <!-- FIXED: dynamic text instead of static "Ipinoproseso" -->
+    <p id="loadingText" class="mt-6 text-lg font-semibold text-gray-700">
+      Naglo-load...
     </p>
 
   </div>
 
   <!-- HEADER -->
   <header class="bg-white shadow p-6 text-center">
-
-    <h1 class="text-2xl font-bold">
-      Mga Akdang Tuluyan o Prosa
-    </h1>
-
-    <p class="text-gray-600">
-      Panitikang Pilipino
-    </p>
-
+    <h1 class="text-2xl font-bold">Mga Akdang Tuluyan o Prosa</h1>
+    <p class="text-gray-600">Panitikang Pilipino</p>
   </header>
 
   <!-- PANITIKAN -->
   <section class="max-w-3xl mx-auto p-6 bg-white mt-4 rounded shadow text-center">
-
     <h2 class="text-xl font-bold mb-2">PANITIKAN</h2>
-
     <p class="text-gray-700">
       Ang panitikan ay tumutukoy sa mga akdang nagpapahayag ng damdamin,
       kaisipan, at karanasan ng tao sa pamamagitan ng malikhaing paggamit ng wika.
     </p>
-
   </section>
 
-  <!-- GRID CARDS -->
+  <!-- GRID -->
   <main class="max-w-5xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
 
     <a href="alamat.html" onclick="goPage(event,'alamat.html')"
@@ -173,15 +156,23 @@
 
   </main>
 
-  <!-- SCRIPT -->
   <script>
 
-    // fade in page
+    // PAGE FADE IN
     window.addEventListener("load", () => {
       document.body.classList.add("loaded");
     });
 
-    // smoother + faster loader
+    // dynamic loader text (fix sa "Ipinoproseso")
+    const texts = ["Naglo-load...", "Ipinoproseso...", "Pakihintay..."];
+    let i = 0;
+
+    setInterval(() => {
+      document.getElementById("loadingText").textContent = texts[i];
+      i = (i + 1) % texts.length;
+    }, 900);
+
+    // smooth page transition
     function goPage(event, url) {
       event.preventDefault();
 
@@ -190,7 +181,6 @@
       loader.classList.remove("hidden");
       document.body.classList.remove("loaded");
 
-      // short realistic transition only
       setTimeout(() => {
         window.location.href = url;
       }, 700);
