@@ -29,17 +29,15 @@
       pointer-events: none;
     }
 
-    /* PEN ANIMATION (slower, smoother) */
+    /* PEN ANIMATION (slower smoother) */
     @keyframes penMove {
       0% {
         left: 0;
         transform: rotate(-10deg);
       }
-
       50% {
         transform: rotate(8deg);
       }
-
       100% {
         left: 120px;
         transform: rotate(-10deg);
@@ -60,13 +58,11 @@
        class="fixed inset-0 bg-[#f8f1e7] flex flex-col items-center justify-center z-50 hidden">
 
     <div class="relative w-40 h-20">
-
       <div class="absolute top-10 left-0 w-32 h-1 bg-gray-400"></div>
 
       <div class="absolute top-4 left-0 text-4xl animate-pen">
         ✒️
       </div>
-
     </div>
 
     <p class="mt-6 text-lg font-semibold text-gray-700">
@@ -100,7 +96,7 @@
 
   </section>
 
-  <!-- GRID -->
+  <!-- GRID CARDS -->
   <main class="max-w-5xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
 
     <a href="alamat.html" onclick="goPage(event,'alamat.html')"
@@ -127,16 +123,65 @@
       <div class="bg-white p-4 font-semibold text-center">PARABULA</div>
     </a>
 
+    <a href="sanaysay.html" onclick="goPage(event,'sanaysay.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+      <img src="https://source.unsplash.com/800x400/?writing" class="w-full h-48 object-cover">
+      <div class="bg-white p-4 font-semibold text-center">SANAYSAY</div>
+    </a>
+
+    <a href="talambuhay.html" onclick="goPage(event,'talambuhay.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+      <img src="https://source.unsplash.com/800x400/?person" class="w-full h-48 object-cover">
+      <div class="bg-white p-4 font-semibold text-center">TALAMBUHAY</div>
+    </a>
+
+    <a href="talumpati.html" onclick="goPage(event,'talumpati.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+      <img src="https://source.unsplash.com/800x400/?speech" class="w-full h-48 object-cover">
+      <div class="bg-white p-4 font-semibold text-center">TALUMPATI</div>
+    </a>
+
+    <a href="balita.html" onclick="goPage(event,'balita.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+      <img src="https://source.unsplash.com/800x400/?news" class="w-full h-48 object-cover">
+      <div class="bg-white p-4 font-semibold text-center">BALITA</div>
+    </a>
+
+    <a href="nobela.html" onclick="goPage(event,'nobela.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+      <img src="https://source.unsplash.com/800x400/?book" class="w-full h-48 object-cover">
+      <div class="bg-white p-4 font-semibold text-center">NOBELA</div>
+    </a>
+
+    <a href="maiklingkwento.html" onclick="goPage(event,'maiklingkwento.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+      <img src="https://source.unsplash.com/800x400/?reading" class="w-full h-48 object-cover">
+      <div class="bg-white p-4 font-semibold text-center">MAIKLING KUWENTO</div>
+    </a>
+
+    <a href="dula.html" onclick="goPage(event,'dula.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+      <img src="https://source.unsplash.com/800x400/?theater" class="w-full h-48 object-cover">
+      <div class="bg-white p-4 font-semibold text-center">DULA</div>
+    </a>
+
+    <a href="mitolohiya.html" onclick="goPage(event,'mitolohiya.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+      <img src="https://source.unsplash.com/800x400/?myth" class="w-full h-48 object-cover">
+      <div class="bg-white p-4 font-semibold text-center">MITOLOHIYA</div>
+    </a>
+
   </main>
 
+  <!-- SCRIPT -->
   <script>
 
-    // PAGE FADE IN
+    // fade in page
     window.addEventListener("load", () => {
       document.body.classList.add("loaded");
     });
 
-    // SMOOTH LOADER TRANSITION (no long delay)
+    // smoother + faster loader
     function goPage(event, url) {
       event.preventDefault();
 
@@ -145,7 +190,7 @@
       loader.classList.remove("hidden");
       document.body.classList.remove("loaded");
 
-      // short smooth transition only
+      // short realistic transition only
       setTimeout(() => {
         window.location.href = url;
       }, 700);
