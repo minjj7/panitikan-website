@@ -7,20 +7,29 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- STYLES -->
   <style>
 
     /* PAGE FADE */
     body {
       opacity: 0;
-      transition: opacity 0.4s ease-in-out;
+      transition: opacity 0.5s ease-in-out;
     }
 
     body.loaded {
       opacity: 1;
     }
 
-    /* PEN ANIMATION */
+    /* LOADER */
+    #loader {
+      transition: opacity 0.3s ease;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* PEN ANIMATION (slower, smoother) */
     @keyframes penMove {
       0% {
         left: 0;
@@ -38,7 +47,7 @@
     }
 
     .animate-pen {
-      animation: penMove 1s infinite alternate ease-in-out;
+      animation: penMove 2.2s infinite ease-in-out;
     }
 
   </style>
@@ -46,229 +55,80 @@
 
 <body class="bg-gray-100 font-sans">
 
-  <!-- ✍️ LOADING SCREEN -->
+  <!-- LOADER -->
   <div id="loader"
        class="fixed inset-0 bg-[#f8f1e7] flex flex-col items-center justify-center z-50 hidden">
 
-    <!-- PEN AREA -->
     <div class="relative w-40 h-20">
 
-      <!-- WRITING LINE -->
       <div class="absolute top-10 left-0 w-32 h-1 bg-gray-400"></div>
 
-      <!-- PEN -->
       <div class="absolute top-4 left-0 text-4xl animate-pen">
         ✒️
       </div>
 
     </div>
 
-    <!-- LOADING TEXT -->
-    <p class="mt-6 text-lg font-semibold text-gray-700 tracking-wide">
-      Nagsusulat...
+    <p class="mt-6 text-lg font-semibold text-gray-700">
+      Ipinoproseso...
     </p>
 
   </div>
 
   <!-- HEADER -->
   <header class="bg-white shadow p-6 text-center">
-    <h1 class="text-2xl font-bold text-center">
+
+    <h1 class="text-2xl font-bold">
       Mga Akdang Tuluyan o Prosa
     </h1>
 
-    <p class="text-gray-600 text-center">
+    <p class="text-gray-600">
       Panitikang Pilipino
     </p>
+
   </header>
 
-  <!-- PANITIKAN MEANING -->
+  <!-- PANITIKAN -->
   <section class="max-w-3xl mx-auto p-6 bg-white mt-4 rounded shadow text-center">
 
-    <h2 class="text-xl font-bold mb-2 text-center">
-      PANITIKAN
-    </h2>
+    <h2 class="text-xl font-bold mb-2">PANITIKAN</h2>
 
-    <p class="text-gray-700 text-center">
+    <p class="text-gray-700">
       Ang panitikan ay tumutukoy sa mga akdang nagpapahayag ng damdamin,
       kaisipan, at karanasan ng tao sa pamamagitan ng malikhaing paggamit ng wika.
     </p>
 
   </section>
 
-  <!-- GRID CARDS -->
+  <!-- GRID -->
   <main class="max-w-5xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
 
-    <!-- ALAMAT -->
-    <a href="alamat.html"
-       onclick="goPage(event, 'alamat.html')"
+    <a href="alamat.html" onclick="goPage(event,'alamat.html')"
        class="block rounded overflow-hidden shadow hover:scale-105 transition">
-
-      <img src="https://source.unsplash.com/800x400/?legend"
-           class="w-full h-48 object-cover">
-
-      <div class="bg-white p-4 font-semibold text-center">
-        ALAMAT
-      </div>
-
+      <img src="https://source.unsplash.com/800x400/?legend" class="w-full h-48 object-cover">
+      <div class="bg-white p-4 font-semibold text-center">ALAMAT</div>
     </a>
 
-    <!-- ANEKDOTA -->
-    <a href="anekdota.html"
-       onclick="goPage(event, 'anekdota.html')"
+    <a href="anekdota.html" onclick="goPage(event,'anekdota.html')"
        class="block rounded overflow-hidden shadow hover:scale-105 transition">
-
-      <img src="https://source.unsplash.com/800x400/?story"
-           class="w-full h-48 object-cover">
-
-      <div class="bg-white p-4 font-semibold text-center">
-        ANEKDOTA
-      </div>
-
+      <img src="https://source.unsplash.com/800x400/?story" class="w-full h-48 object-cover">
+      <div class="bg-white p-4 font-semibold text-center">ANEKDOTA</div>
     </a>
 
-    <!-- PABULA -->
-    <a href="pabula.html"
-       onclick="goPage(event, 'pabula.html')"
+    <a href="pabula.html" onclick="goPage(event,'pabula.html')"
        class="block rounded overflow-hidden shadow hover:scale-105 transition">
-
-      <img src="https://source.unsplash.com/800x400/?animal"
-           class="w-full h-48 object-cover">
-
-      <div class="bg-white p-4 font-semibold text-center">
-        PABULA
-      </div>
-
+      <img src="https://source.unsplash.com/800x400/?animal" class="w-full h-48 object-cover">
+      <div class="bg-white p-4 font-semibold text-center">PABULA</div>
     </a>
 
-    <!-- PARABULA -->
-    <a href="parabula.html"
-       onclick="goPage(event, 'parabula.html')"
+    <a href="parabula.html" onclick="goPage(event,'parabula.html')"
        class="block rounded overflow-hidden shadow hover:scale-105 transition">
-
-      <img src="https://source.unsplash.com/800x400/?light"
-           class="w-full h-48 object-cover">
-
-      <div class="bg-white p-4 font-semibold text-center">
-        PARABULA
-      </div>
-
-    </a>
-
-    <!-- SANAYSAY -->
-    <a href="sanaysay.html"
-       onclick="goPage(event, 'sanaysay.html')"
-       class="block rounded overflow-hidden shadow hover:scale-105 transition">
-
-      <img src="https://source.unsplash.com/800x400/?writing"
-           class="w-full h-48 object-cover">
-
-      <div class="bg-white p-4 font-semibold text-center">
-        SANAYSAY
-      </div>
-
-    </a>
-
-    <!-- TALAMBUHAY -->
-    <a href="talambuhay.html"
-       onclick="goPage(event, 'talambuhay.html')"
-       class="block rounded overflow-hidden shadow hover:scale-105 transition">
-
-      <img src="https://source.unsplash.com/800x400/?person"
-           class="w-full h-48 object-cover">
-
-      <div class="bg-white p-4 font-semibold text-center">
-        TALAMBUHAY
-      </div>
-
-    </a>
-
-    <!-- TALUMPATI -->
-    <a href="talumpati.html"
-       onclick="goPage(event, 'talumpati.html')"
-       class="block rounded overflow-hidden shadow hover:scale-105 transition">
-
-      <img src="https://source.unsplash.com/800x400/?speech"
-           class="w-full h-48 object-cover">
-
-      <div class="bg-white p-4 font-semibold text-center">
-        TALUMPATI
-      </div>
-
-    </a>
-
-    <!-- BALITA -->
-    <a href="balita.html"
-       onclick="goPage(event, 'balita.html')"
-       class="block rounded overflow-hidden shadow hover:scale-105 transition">
-
-      <img src="https://source.unsplash.com/800x400/?news"
-           class="w-full h-48 object-cover">
-
-      <div class="bg-white p-4 font-semibold text-center">
-        BALITA
-      </div>
-
-    </a>
-
-    <!-- NOBELA -->
-    <a href="nobela.html"
-       onclick="goPage(event, 'nobela.html')"
-       class="block rounded overflow-hidden shadow hover:scale-105 transition">
-
-      <img src="https://source.unsplash.com/800x400/?book"
-           class="w-full h-48 object-cover">
-
-      <div class="bg-white p-4 font-semibold text-center">
-        NOBELA
-      </div>
-
-    </a>
-
-    <!-- MAIKLING KUWENTO -->
-    <a href="maiklingkwento.html"
-       onclick="goPage(event, 'maiklingkwento.html')"
-       class="block rounded overflow-hidden shadow hover:scale-105 transition">
-
-      <img src="https://source.unsplash.com/800x400/?reading"
-           class="w-full h-48 object-cover">
-
-      <div class="bg-white p-4 font-semibold text-center">
-        MAIKLING KUWENTO
-      </div>
-
-    </a>
-
-    <!-- DULA -->
-    <a href="dula.html"
-       onclick="goPage(event, 'dula.html')"
-       class="block rounded overflow-hidden shadow hover:scale-105 transition">
-
-      <img src="https://source.unsplash.com/800x400/?theater"
-           class="w-full h-48 object-cover">
-
-      <div class="bg-white p-4 font-semibold text-center">
-        DULA
-      </div>
-
-    </a>
-
-    <!-- MITOLOHIYA -->
-    <a href="mitolohiya.html"
-       onclick="goPage(event, 'mitolohiya.html')"
-       class="block rounded overflow-hidden shadow hover:scale-105 transition">
-
-      <img src="https://source.unsplash.com/800x400/?myth"
-           class="w-full h-48 object-cover">
-
-      <div class="bg-white p-4 font-semibold text-center">
-        MITOLOHIYA
-      </div>
-
+      <img src="https://source.unsplash.com/800x400/?light" class="w-full h-48 object-cover">
+      <div class="bg-white p-4 font-semibold text-center">PARABULA</div>
     </a>
 
   </main>
 
-  <!-- SCRIPTS -->
   <script>
 
     // PAGE FADE IN
@@ -276,22 +136,19 @@
       document.body.classList.add("loaded");
     });
 
-    // PAGE TRANSITION + LOADER
+    // SMOOTH LOADER TRANSITION (no long delay)
     function goPage(event, url) {
-
       event.preventDefault();
 
-      // SHOW LOADER
-      document.getElementById("loader").classList.remove("hidden");
+      const loader = document.getElementById("loader");
 
-      // FADE OUT
+      loader.classList.remove("hidden");
       document.body.classList.remove("loaded");
 
-      // OPEN NEXT PAGE
+      // short smooth transition only
       setTimeout(() => {
         window.location.href = url;
-      }, 1200);
-
+      }, 700);
     }
 
   </script>
