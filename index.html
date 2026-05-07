@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panitikan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✨ FADE ANIMATION STYLE -->
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    body.loaded {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow p-6 text-center">
+    <h1 class="text-2xl font-bold text-center">Mga Akdang Tuluyan o Prosa</h1>
+    <p class="text-gray-600 text-center">Panitikang Pilipino</p>
+  </header>
+
+  <!-- MEANING -->
+  <section class="max-w-3xl mx-auto p-6 bg-white mt-4 rounded shadow text-center">
+    <h2 class="text-xl font-bold mb-2 text-center">PANITIKAN</h2>
+    <p class="text-gray-700 text-center">
+      Ang panitikan ay tumutukoy sa mga akdang nagpapahayag ng damdamin,
+      kaisipan, at karanasan ng tao sa pamamagitan ng malikhaing paggamit ng wika.
+    </p>
+  </section>
+
+  <!-- GRID CARDS -->
+  <main class="max-w-5xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- ALAMAT -->
+    <a href="alamat.html"
+       onclick="goPage(event, 'alamat.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+
+      <img src="https://source.unsplash.com/800x400/?legend"
+           class="w-full h-48 object-cover">
+
+      <div class="bg-white p-4 font-semibold text-center">ALAMAT</div>
+    </a>
+
+    <!-- ANEKDOTA -->
+    <a href="anekdota.html"
+       onclick="goPage(event, 'anekdota.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+
+      <img src="https://source.unsplash.com/800x400/?story"
+           class="w-full h-48 object-cover">
+
+      <div class="bg-white p-4 font-semibold text-center">ANEKDOTA</div>
+    </a>
+
+    <!-- PABULA -->
+    <a href="pabula.html"
+       onclick="goPage(event, 'pabula.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+
+      <img src="https://source.unsplash.com/800x400/?animal"
+           class="w-full h-48 object-cover">
+
+      <div class="bg-white p-4 font-semibold text-center">PABULA</div>
+    </a>
+
+    <!-- PARABULA -->
+    <a href="parabula.html"
+       onclick="goPage(event, 'parabula.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+
+      <img src="https://source.unsplash.com/800x400/?light"
+           class="w-full h-48 object-cover">
+
+      <div class="bg-white p-4 font-semibold text-center">PARABULA</div>
+    </a>
+
+    <!-- SANAYSAY -->
+    <a href="sanaysay.html"
+       onclick="goPage(event, 'sanaysay.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+
+      <img src="https://source.unsplash.com/800x400/?writing"
+           class="w-full h-48 object-cover">
+
+      <div class="bg-white p-4 font-semibold text-center">SANAYSAY</div>
+    </a>
+
+    <!-- TALAMBUHAY -->
+    <a href="talambuhay.html"
+       onclick="goPage(event, 'talambuhay.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+
+      <img src="https://source.unsplash.com/800x400/?person"
+           class="w-full h-48 object-cover">
+
+      <div class="bg-white p-4 font-semibold text-center">TALAMBUHAY</div>
+    </a>
+
+    <!-- TALUMPATI -->
+    <a href="talumpati.html"
+       onclick="goPage(event, 'talumpati.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+
+      <img src="https://source.unsplash.com/800x400/?speech"
+           class="w-full h-48 object-cover">
+
+      <div class="bg-white p-4 font-semibold text-center">TALUMPATI</div>
+    </a>
+
+    <!-- BALITA -->
+    <a href="balita.html"
+       onclick="goPage(event, 'balita.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+
+      <img src="https://source.unsplash.com/800x400/?news"
+           class="w-full h-48 object-cover">
+
+      <div class="bg-white p-4 font-semibold text-center">BALITA</div>
+    </a>
+
+    <!-- NOBELA -->
+    <a href="nobela.html"
+       onclick="goPage(event, 'nobela.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+
+      <img src="https://source.unsplash.com/800x400/?book"
+           class="w-full h-48 object-cover">
+
+      <div class="bg-white p-4 font-semibold text-center">NOBELA</div>
+    </a>
+
+    <!-- MAIKLING KUWENTO -->
+    <a href="maiklingkwento.html"
+       onclick="goPage(event, 'maiklingkwento.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+
+      <img src="https://source.unsplash.com/800x400/?reading"
+           class="w-full h-48 object-cover">
+
+      <div class="bg-white p-4 font-semibold text-center">MAIKLING KUWENTO</div>
+    </a>
+
+    <!-- DULA -->
+    <a href="dula.html"
+       onclick="goPage(event, 'dula.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+
+      <img src="https://source.unsplash.com/800x400/?theater"
+           class="w-full h-48 object-cover">
+
+      <div class="bg-white p-4 font-semibold text-center">DULA</div>
+    </a>
+
+    <!-- MITOLOHIYA -->
+    <a href="mitolohiya.html"
+       onclick="goPage(event, 'mitolohiya.html')"
+       class="block rounded overflow-hidden shadow hover:scale-105 transition">
+
+      <img src="https://source.unsplash.com/800x400/?myth"
+           class="w-full h-48 object-cover">
+
+      <div class="bg-white p-4 font-semibold text-center">MITOLOHIYA</div>
+    </a>
+
+  </main>
+
+  <!-- ✨ ANIMATION SCRIPT -->
+  <script>
+    // fade in on load
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+
+    // fade out before switching page
+    function goPage(event, url) {
+      event.preventDefault();
+      document.body.classList.remove("loaded");
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 300);
+    }
+  </script>
+
+</body>
+</html>
