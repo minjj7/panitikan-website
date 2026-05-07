@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panitikan</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- ✨ FADE ANIMATION STYLE -->
+  <!-- STYLES -->
   <style>
+
+    /* PAGE FADE */
     body {
       opacity: 0;
       transition: opacity 0.4s ease-in-out;
@@ -16,24 +19,80 @@
     body.loaded {
       opacity: 1;
     }
+
+    /* PEN ANIMATION */
+    @keyframes penMove {
+      0% {
+        left: 0;
+        transform: rotate(-10deg);
+      }
+
+      50% {
+        transform: rotate(8deg);
+      }
+
+      100% {
+        left: 120px;
+        transform: rotate(-10deg);
+      }
+    }
+
+    .animate-pen {
+      animation: penMove 1s infinite alternate ease-in-out;
+    }
+
   </style>
 </head>
 
 <body class="bg-gray-100 font-sans">
 
+  <!-- ✍️ LOADING SCREEN -->
+  <div id="loader"
+       class="fixed inset-0 bg-[#f8f1e7] flex flex-col items-center justify-center z-50 hidden">
+
+    <!-- PEN AREA -->
+    <div class="relative w-40 h-20">
+
+      <!-- WRITING LINE -->
+      <div class="absolute top-10 left-0 w-32 h-1 bg-gray-400"></div>
+
+      <!-- PEN -->
+      <div class="absolute top-4 left-0 text-4xl animate-pen">
+        ✒️
+      </div>
+
+    </div>
+
+    <!-- LOADING TEXT -->
+    <p class="mt-6 text-lg font-semibold text-gray-700 tracking-wide">
+      Nagsusulat...
+    </p>
+
+  </div>
+
   <!-- HEADER -->
   <header class="bg-white shadow p-6 text-center">
-    <h1 class="text-2xl font-bold text-center">Mga Akdang Tuluyan o Prosa</h1>
-    <p class="text-gray-600 text-center">Panitikang Pilipino</p>
+    <h1 class="text-2xl font-bold text-center">
+      Mga Akdang Tuluyan o Prosa
+    </h1>
+
+    <p class="text-gray-600 text-center">
+      Panitikang Pilipino
+    </p>
   </header>
 
-  <!-- MEANING -->
+  <!-- PANITIKAN MEANING -->
   <section class="max-w-3xl mx-auto p-6 bg-white mt-4 rounded shadow text-center">
-    <h2 class="text-xl font-bold mb-2 text-center">PANITIKAN</h2>
+
+    <h2 class="text-xl font-bold mb-2 text-center">
+      PANITIKAN
+    </h2>
+
     <p class="text-gray-700 text-center">
       Ang panitikan ay tumutukoy sa mga akdang nagpapahayag ng damdamin,
       kaisipan, at karanasan ng tao sa pamamagitan ng malikhaing paggamit ng wika.
     </p>
+
   </section>
 
   <!-- GRID CARDS -->
@@ -47,7 +106,10 @@
       <img src="https://source.unsplash.com/800x400/?legend"
            class="w-full h-48 object-cover">
 
-      <div class="bg-white p-4 font-semibold text-center">ALAMAT</div>
+      <div class="bg-white p-4 font-semibold text-center">
+        ALAMAT
+      </div>
+
     </a>
 
     <!-- ANEKDOTA -->
@@ -58,7 +120,10 @@
       <img src="https://source.unsplash.com/800x400/?story"
            class="w-full h-48 object-cover">
 
-      <div class="bg-white p-4 font-semibold text-center">ANEKDOTA</div>
+      <div class="bg-white p-4 font-semibold text-center">
+        ANEKDOTA
+      </div>
+
     </a>
 
     <!-- PABULA -->
@@ -69,7 +134,10 @@
       <img src="https://source.unsplash.com/800x400/?animal"
            class="w-full h-48 object-cover">
 
-      <div class="bg-white p-4 font-semibold text-center">PABULA</div>
+      <div class="bg-white p-4 font-semibold text-center">
+        PABULA
+      </div>
+
     </a>
 
     <!-- PARABULA -->
@@ -80,7 +148,10 @@
       <img src="https://source.unsplash.com/800x400/?light"
            class="w-full h-48 object-cover">
 
-      <div class="bg-white p-4 font-semibold text-center">PARABULA</div>
+      <div class="bg-white p-4 font-semibold text-center">
+        PARABULA
+      </div>
+
     </a>
 
     <!-- SANAYSAY -->
@@ -91,7 +162,10 @@
       <img src="https://source.unsplash.com/800x400/?writing"
            class="w-full h-48 object-cover">
 
-      <div class="bg-white p-4 font-semibold text-center">SANAYSAY</div>
+      <div class="bg-white p-4 font-semibold text-center">
+        SANAYSAY
+      </div>
+
     </a>
 
     <!-- TALAMBUHAY -->
@@ -102,7 +176,10 @@
       <img src="https://source.unsplash.com/800x400/?person"
            class="w-full h-48 object-cover">
 
-      <div class="bg-white p-4 font-semibold text-center">TALAMBUHAY</div>
+      <div class="bg-white p-4 font-semibold text-center">
+        TALAMBUHAY
+      </div>
+
     </a>
 
     <!-- TALUMPATI -->
@@ -113,7 +190,10 @@
       <img src="https://source.unsplash.com/800x400/?speech"
            class="w-full h-48 object-cover">
 
-      <div class="bg-white p-4 font-semibold text-center">TALUMPATI</div>
+      <div class="bg-white p-4 font-semibold text-center">
+        TALUMPATI
+      </div>
+
     </a>
 
     <!-- BALITA -->
@@ -124,7 +204,10 @@
       <img src="https://source.unsplash.com/800x400/?news"
            class="w-full h-48 object-cover">
 
-      <div class="bg-white p-4 font-semibold text-center">BALITA</div>
+      <div class="bg-white p-4 font-semibold text-center">
+        BALITA
+      </div>
+
     </a>
 
     <!-- NOBELA -->
@@ -135,7 +218,10 @@
       <img src="https://source.unsplash.com/800x400/?book"
            class="w-full h-48 object-cover">
 
-      <div class="bg-white p-4 font-semibold text-center">NOBELA</div>
+      <div class="bg-white p-4 font-semibold text-center">
+        NOBELA
+      </div>
+
     </a>
 
     <!-- MAIKLING KUWENTO -->
@@ -146,7 +232,10 @@
       <img src="https://source.unsplash.com/800x400/?reading"
            class="w-full h-48 object-cover">
 
-      <div class="bg-white p-4 font-semibold text-center">MAIKLING KUWENTO</div>
+      <div class="bg-white p-4 font-semibold text-center">
+        MAIKLING KUWENTO
+      </div>
+
     </a>
 
     <!-- DULA -->
@@ -157,7 +246,10 @@
       <img src="https://source.unsplash.com/800x400/?theater"
            class="w-full h-48 object-cover">
 
-      <div class="bg-white p-4 font-semibold text-center">DULA</div>
+      <div class="bg-white p-4 font-semibold text-center">
+        DULA
+      </div>
+
     </a>
 
     <!-- MITOLOHIYA -->
@@ -168,27 +260,40 @@
       <img src="https://source.unsplash.com/800x400/?myth"
            class="w-full h-48 object-cover">
 
-      <div class="bg-white p-4 font-semibold text-center">MITOLOHIYA</div>
+      <div class="bg-white p-4 font-semibold text-center">
+        MITOLOHIYA
+      </div>
+
     </a>
 
   </main>
 
-  <!-- ✨ ANIMATION SCRIPT -->
+  <!-- SCRIPTS -->
   <script>
-    // fade in on load
+
+    // PAGE FADE IN
     window.addEventListener("load", () => {
       document.body.classList.add("loaded");
     });
 
-    // fade out before switching page
+    // PAGE TRANSITION + LOADER
     function goPage(event, url) {
+
       event.preventDefault();
+
+      // SHOW LOADER
+      document.getElementById("loader").classList.remove("hidden");
+
+      // FADE OUT
       document.body.classList.remove("loaded");
 
+      // OPEN NEXT PAGE
       setTimeout(() => {
         window.location.href = url;
-      }, 300);
+      }, 1200);
+
     }
+
   </script>
 
 </body>
