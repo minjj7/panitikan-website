@@ -147,68 +147,35 @@
 
 </main>
 
+<!-- SCRIPT -->
 <script>
-  const loader = document.getElementById("loader");
-  const typingText = document.getElementById("typingText");
-
-  const word = "NAGSUSULAT...";
-  let i = 0;
-
-  function typeWriter(callback) {
-    typingText.innerHTML = "";
-    i = 0;
-
-    function typing() {
-      if (i < word.length) {
-        typingText.innerHTML += word.charAt(i);
-        i++;
-        setTimeout(typing, 80);
-      } else {
-        if (callback) callback();
-      }
-    }
-
-    typing();
-  }
-
-  document.querySelectorAll(".topic-link").forEach(link => {
-    link.addEventListener("click", function(e) {
-      e.preventDefault();
-
-      const destination = this.href;
-      loader.style.display = "flex";
-
-      typeWriter(() => {
-        setTimeout(() => {
-          window.location.href = destination;
-        }, 300);
-      });
-    });
+  // fade-in effect
+  window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
   });
 
-  window.addEventListener("pageshow", () => {
-    loader.style.display = "none";
-  });
-
-  /* SAFE CURSOR (GitHub-safe) */
+  // feather cursor + sparkles
   const feather = document.querySelector(".feather-cursor");
 
-  if (feather) {
-    document.addEventListener("mousemove", (e) => {
-      feather.style.left = e.clientX + "px";
-      feather.style.top = e.clientY + "px";
+  document.addEventListener("mousemove", (e) => {
+    // move feather
+    feather.style.left = e.clientX + "px";
+    feather.style.top = e.clientY + "px";
 
-      const sparkle = document.createElement("div");
-      sparkle.classList.add("sparkle");
+    // sparkle trail
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
 
-      sparkle.style.left = e.clientX + "px";
-      sparkle.style.top = e.clientY + "px";
+    sparkle.style.left = e.clientX + "px";
+    sparkle.style.top = e.clientY + "px";
 
-      document.body.appendChild(sparkle);
+    document.body.appendChild(sparkle);
 
-      setTimeout(() => sparkle.remove(), 600);
-    });
-  }
+    setTimeout(() => {
+      sparkle.remove();
+    }, 600);
+  });
 </script>
+
 </body>
 </html>
