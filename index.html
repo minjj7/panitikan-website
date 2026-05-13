@@ -46,8 +46,12 @@
 </main>
 
 <script>
-  // Set proper history state for Home page
   window.addEventListener("load", () => {
+    history.replaceState({ page: "home" }, "");
+  });
+
+  // safety fix for back/forward navigation
+  window.addEventListener("pageshow", () => {
     history.replaceState({ page: "home" }, "");
   });
 </script>
