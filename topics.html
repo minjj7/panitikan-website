@@ -238,7 +238,6 @@
       e.preventDefault();
 
       const destination = this.href;
-
       loader.style.display = "flex";
 
       typeWriter(() => {
@@ -253,24 +252,25 @@
     loader.style.display = "none";
   });
 
-  /* FEATHER CURSOR + SPARKLES */
+  /* SAFE CURSOR (GitHub-safe) */
   const feather = document.querySelector(".feather-cursor");
 
-  document.addEventListener("mousemove", (e) => {
-    feather.style.left = e.clientX + "px";
-    feather.style.top = e.clientY + "px";
+  if (feather) {
+    document.addEventListener("mousemove", (e) => {
+      feather.style.left = e.clientX + "px";
+      feather.style.top = e.clientY + "px";
 
-    const sparkle = document.createElement("div");
-    sparkle.classList.add("sparkle");
+      const sparkle = document.createElement("div");
+      sparkle.classList.add("sparkle");
 
-    sparkle.style.left = e.clientX + "px";
-    sparkle.style.top = e.clientY + "px";
+      sparkle.style.left = e.clientX + "px";
+      sparkle.style.top = e.clientY + "px";
 
-    document.body.appendChild(sparkle);
+      document.body.appendChild(sparkle);
 
-    setTimeout(() => sparkle.remove(), 600);
-  });
+      setTimeout(() => sparkle.remove(), 600);
+    });
+  }
 </script>
-
 </body>
 </html>
