@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topics | Panitikan</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background:
+      linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('mainpage.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+
+      cursor: none;
+    }
+
+    /* FEATHER CURSOR */
+    .feather-cursor {
+      width: 40px;
+      height: 40px;
+      position: fixed;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    /* SPARKLES */
+    .sparkle {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: fadeOut 0.6s linear forwards;
+      z-index: 9998;
+    }
+
+    @keyframes fadeOut {
+      0% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(0); }
+    }
+
+    /* LOADER */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 24, 39, 0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    .pen-loader {
+      width: 130px;
+      animation: write 1.2s infinite ease-in-out;
+      transform-origin: bottom center;
+    }
+
+    @keyframes write {
+      0% { transform: rotate(-15deg) translateX(0); }
+      25% { transform: rotate(0deg) translateX(10px); }
+      50% { transform: rotate(-10deg) translateX(20px); }
+      75% { transform: rotate(0deg) translateX(10px); }
+      100% { transform: rotate(-15deg) translateX(0); }
+    }
+
+    .loading-text {
+      margin-top: 20px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .cursor-blink {
+      display: inline-block;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+<!-- FEATHER CURSOR -->
+<img src="50486032-c259-48e9-b01a-0be87784162f.png" class="feather-cursor">
+
+<!-- LOADER -->
+<div id="loader">
+  <img src="./pen.png" class="pen-loader">
+  <div class="loading-text">
+    <span id="typingText"></span><span class="cursor-blink">|</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="flex justify-between items-center p-6 bg-black/40 backdrop-blur-md">
+  <h1 class="font-bold text-xl">Panitikang Pilipino</h1>
+
+  <nav class="flex gap-6 font-semibold">
+    <a href="index.html">Home</a>
+    <a href="topics.html">Topics</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<!-- TOPICS -->
+<section class="max-w-6xl mx-auto px-6 py-12">
+  <h2 class="text-3xl font-bold text-center mb-10">Mga Paksa</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <a href="alamat.html" class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+      <div class="h-48 overflow-hidden">
+        <img src="https://source.unsplash.com/800x400/?legend" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+      </div>
+      <div class="p-4 text-center font-bold bg-black/40">ALAMAT</div>
+    </a>
+
+    <a href="anekdota.html" class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+      <div class="h-48 overflow-hidden">
+        <img src="https://source.unsplash.com/800x400/?story" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+      </div>
+      <div class="p-4 text-center font-bold bg-black/40">ANEKDOTA</div>
+    </a>
+
+    <a href="pabula.html" class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+      <div class="h-48 overflow-hidden">
+        <img src="https://source.unsplash.com/800x400/?animal" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+      </div>
+      <div class="p-4 text-center font-bold bg-black/40">PABULA</div>
+    </a>
+
+    <a href="parabula.html" class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+      <div class="h-48 overflow-hidden">
+        <img src="https://source.unsplash.com/800x400/?light" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+      </div>
+      <div class="p-4 text-center font-bold bg-black/40">PARABULA</div>
+    </a>
+
+    <a href="sanaysay.html" class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+      <div class="h-48 overflow-hidden">
+        <img src="https://source.unsplash.com/800x400/?writing" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+      </div>
+      <div class="p-4 text-center font-bold bg-black/40">SANAYSAY</div>
+    </a>
+
+    <a href="talambuhay.html" class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+      <div class="h-48 overflow-hidden">
+        <img src="https://source.unsplash.com/800x400/?person" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+      </div>
+      <div class="p-4 text-center font-bold bg-black/40">TALAMBUHAY</div>
+    </a>
+
+    <a href="talumpati.html" class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+      <div class="h-48 overflow-hidden">
+        <img src="https://source.unsplash.com/800x400/?speech" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+      </div>
+      <div class="p-4 text-center font-bold bg-black/40">TALUMPATI</div>
+    </a>
+
+    <a href="balita.html" class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+      <div class="h-48 overflow-hidden">
+        <img src="https://source.unsplash.com/800x400/?news" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+      </div>
+      <div class="p-4 text-center font-bold bg-black/40">BALITA</div>
+    </a>
+
+    <a href="nobela.html" class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+      <div class="h-48 overflow-hidden">
+        <img src="https://source.unsplash.com/800x400/?book" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+      </div>
+      <div class="p-4 text-center font-bold bg-black/40">NOBELA</div>
+    </a>
+
+    <a href="maiklingkwento.html" class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+      <div class="h-48 overflow-hidden">
+        <img src="https://source.unsplash.com/800x400/?reading" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+      </div>
+      <div class="p-4 text-center font-bold bg-black/40">MAIKLING KUWENTO</div>
+    </a>
+
+    <a href="dula.html" class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+      <div class="h-48 overflow-hidden">
+        <img src="https://source.unsplash.com/800x400/?theater" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+      </div>
+      <div class="p-4 text-center font-bold bg-black/40">DULA</div>
+    </a>
+
+    <a href="mitolohiya.html" class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+      <div class="h-48 overflow-hidden">
+        <img src="https://source.unsplash.com/800x400/?myth" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+      </div>
+      <div class="p-4 text-center font-bold bg-black/40">MITOLOHIYA</div>
+    </a>
+
+  </div>
+</section>
+
+<script>
+  const loader = document.getElementById("loader");
+  const typingText = document.getElementById("typingText");
+
+  const word = "NAGSUSULAT...";
+  let i = 0;
+
+  function typeWriter(callback) {
+    typingText.innerHTML = "";
+    i = 0;
+
+    function typing() {
+      if (i < word.length) {
+        typingText.innerHTML += word.charAt(i);
+        i++;
+        setTimeout(typing, 80);
+      } else {
+        if (callback) callback();
+      }
+    }
+
+    typing();
+  }
+
+  document.querySelectorAll(".topic-link").forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      const destination = this.href;
+
+      loader.style.display = "flex";
+
+      typeWriter(() => {
+        setTimeout(() => {
+          window.location.href = destination;
+        }, 300);
+      });
+    });
+  });
+
+  window.addEventListener("pageshow", () => {
+    loader.style.display = "none";
+  });
+
+  /* FEATHER CURSOR + SPARKLES */
+  const feather = document.querySelector(".feather-cursor");
+
+  document.addEventListener("mousemove", (e) => {
+    feather.style.left = e.clientX + "px";
+    feather.style.top = e.clientY + "px";
+
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+
+    sparkle.style.left = e.clientX + "px";
+    sparkle.style.top = e.clientY + "px";
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => sparkle.remove(), 600);
+  });
+</script>
+
+</body>
+</html>
