@@ -203,6 +203,11 @@
     loader.style.display = "none";
   });
 </script>
-
+<script>
+  // mark Topics as a proper history checkpoint
+  window.addEventListener("load", () => {
+    history.replaceState({ page: "topics" }, "");
+  });
+</script>
 </body>
 </html>
