@@ -1,0 +1,358 @@
+<!DOCTYPE html> 
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topics | Panitikan</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background:
+      linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('mainpage.jpg');
+
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* LOADER */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 24, 39, 0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    /* PEN */
+    .pen-loader {
+      width: 130px;
+      animation: write 1.2s infinite ease-in-out;
+      transform-origin: bottom center;
+    }
+
+    @keyframes write {
+
+      0% {
+        transform: rotate(-15deg) translateX(0);
+      }
+
+      25% {
+        transform: rotate(0deg) translateX(10px);
+      }
+
+      50% {
+        transform: rotate(-10deg) translateX(20px);
+      }
+
+      75% {
+        transform: rotate(0deg) translateX(10px);
+      }
+
+      100% {
+        transform: rotate(-15deg) translateX(0);
+      }
+
+    }
+
+    .loading-text {
+      margin-top: 20px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+  </style>
+</head>
+
+<body class="text-white">
+
+<!-- LOADER -->
+<div id="loader">
+
+  <!-- PEN IMAGE -->
+  <img src="pen.png"
+       alt="Pen"
+       class="pen-loader">
+
+  <div class="loading-text">
+    NAGSUSULAT...
+  </div>
+
+</div>
+
+<!-- NAV -->
+<header class="flex justify-between items-center p-6 bg-black/40 backdrop-blur-md">
+
+  <h1 class="font-bold text-xl">
+    Panitikang Pilipino
+  </h1>
+
+  <nav class="flex gap-6 font-semibold">
+
+    <!-- WALANG LOADING -->
+    <a href="index.html">Home</a>
+
+    <a href="topics.html">Topics</a>
+
+    <a href="about.html">About</a>
+
+  </nav>
+
+</header>
+
+<!-- TOPICS -->
+<section id="topics" class="max-w-6xl mx-auto px-6 py-12">
+
+  <h2 class="text-3xl font-bold text-center mb-10 text-white">
+    Mga Paksa
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- ALAMAT -->
+    <a href="alamat.html"
+       class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+
+      <div class="h-48 overflow-hidden">
+
+        <img src="https://source.unsplash.com/800x400/?legend"
+             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+
+      </div>
+
+      <div class="p-4 text-center font-bold text-white bg-black/40">
+        ALAMAT
+      </div>
+
+    </a>
+
+    <!-- ANEKDOTA -->
+    <a href="anekdota.html"
+       class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+
+      <div class="h-48 overflow-hidden">
+
+        <img src="https://source.unsplash.com/800x400/?story"
+             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+
+      </div>
+
+      <div class="p-4 text-center font-bold text-white bg-black/40">
+        ANEKDOTA
+      </div>
+
+    </a>
+
+    <!-- PABULA -->
+    <a href="pabula.html"
+       class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+
+      <div class="h-48 overflow-hidden">
+
+        <img src="https://source.unsplash.com/800x400/?animal"
+             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+
+      </div>
+
+      <div class="p-4 text-center font-bold text-white bg-black/40">
+        PABULA
+      </div>
+
+    </a>
+
+    <!-- PARABULA -->
+    <a href="parabula.html"
+       class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+
+      <div class="h-48 overflow-hidden">
+
+        <img src="https://source.unsplash.com/800x400/?light"
+             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+
+      </div>
+
+      <div class="p-4 text-center font-bold text-white bg-black/40">
+        PARABULA
+      </div>
+
+    </a>
+
+    <!-- SANAYSAY -->
+    <a href="sanaysay.html"
+       class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+
+      <div class="h-48 overflow-hidden">
+
+        <img src="https://source.unsplash.com/800x400/?writing"
+             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+
+      </div>
+
+      <div class="p-4 text-center font-bold text-white bg-black/40">
+        SANAYSAY
+      </div>
+
+    </a>
+
+    <!-- TALAMBUHAY -->
+    <a href="talambuhay.html"
+       class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+
+      <div class="h-48 overflow-hidden">
+
+        <img src="https://source.unsplash.com/800x400/?person"
+             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+
+      </div>
+
+      <div class="p-4 text-center font-bold text-white bg-black/40">
+        TALAMBUHAY
+      </div>
+
+    </a>
+
+    <!-- TALUMPATI -->
+    <a href="talumpati.html"
+       class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+
+      <div class="h-48 overflow-hidden">
+
+        <img src="https://source.unsplash.com/800x400/?speech"
+             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+
+      </div>
+
+      <div class="p-4 text-center font-bold text-white bg-black/40">
+        TALUMPATI
+      </div>
+
+    </a>
+
+    <!-- BALITA -->
+    <a href="balita.html"
+       class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+
+      <div class="h-48 overflow-hidden">
+
+        <img src="https://source.unsplash.com/800x400/?news"
+             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+
+      </div>
+
+      <div class="p-4 text-center font-bold text-white bg-black/40">
+        BALITA
+      </div>
+
+    </a>
+
+    <!-- NOBELA -->
+    <a href="nobela.html"
+       class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+
+      <div class="h-48 overflow-hidden">
+
+        <img src="https://source.unsplash.com/800x400/?book"
+             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+
+      </div>
+
+      <div class="p-4 text-center font-bold text-white bg-black/40">
+        NOBELA
+      </div>
+
+    </a>
+
+    <!-- MAIKLING KUWENTO -->
+    <a href="maiklingkwento.html"
+       class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+
+      <div class="h-48 overflow-hidden">
+
+        <img src="https://source.unsplash.com/800x400/?reading"
+             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+
+      </div>
+
+      <div class="p-4 text-center font-bold text-white bg-black/40">
+        MAIKLING KUWENTO
+      </div>
+
+    </a>
+
+    <!-- DULA -->
+    <a href="dula.html"
+       class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+
+      <div class="h-48 overflow-hidden">
+
+        <img src="https://source.unsplash.com/800x400/?theater"
+             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+
+      </div>
+
+      <div class="p-4 text-center font-bold text-white bg-black/40">
+        DULA
+      </div>
+
+    </a>
+
+    <!-- MITOLOHIYA -->
+    <a href="mitolohiya.html"
+       class="topic-link group rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md border border-white/20 hover:scale-105 transition">
+
+      <div class="h-48 overflow-hidden">
+
+        <img src="https://source.unsplash.com/800x400/?myth"
+             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+
+      </div>
+
+      <div class="p-4 text-center font-bold text-white bg-black/40">
+        MITOLOHIYA
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+
+<script>
+
+  // LOADING ONLY FOR TOPICS
+  document.querySelectorAll(".topic-link").forEach(link => {
+
+    link.addEventListener("click", function(e) {
+
+      e.preventDefault();
+
+      const destination = this.href;
+
+      // SHOW LOADER
+      const loader = document.getElementById("loader");
+
+      loader.style.display = "flex";
+
+      // REDIRECT
+      setTimeout(() => {
+
+        window.location.href = destination;
+
+      }, 1000);
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>
