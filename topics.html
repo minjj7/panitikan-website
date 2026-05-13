@@ -94,12 +94,12 @@
 
 <body class="text-white">
 
-<!-- FEATHER CURSOR -->
-<img src="50486032-c259-48e9-b01a-0be87784162f.png" class="feather-cursor">
+<!-- FEATHER CURSOR (SAFE FALLBACK) -->
+<img src="penn.png" class="feather-cursor" onerror="this.style.display='none'">
 
 <!-- LOADER -->
 <div id="loader">
-  <img src="./pen.png" class="pen-loader">
+  <img src="pen.png" class="pen-loader">
   <div class="loading-text">
     <span id="typingText"></span><span class="cursor-blink">|</span>
   </div>
@@ -238,6 +238,7 @@
       e.preventDefault();
 
       const destination = this.href;
+
       loader.style.display = "flex";
 
       typeWriter(() => {
@@ -252,13 +253,16 @@
     loader.style.display = "none";
   });
 
-  /* SAFE CURSOR (GitHub-safe) */
+  /* SAFE CURSOR + OPTIMIZED SPARKLES */
   const feather = document.querySelector(".feather-cursor");
 
   if (feather) {
     document.addEventListener("mousemove", (e) => {
       feather.style.left = e.clientX + "px";
       feather.style.top = e.clientY + "px";
+
+      // throttle para di maglag sa GitHub Pages
+      if (Math.random() > 0.6) return;
 
       const sparkle = document.createElement("div");
       sparkle.classList.add("sparkle");
@@ -272,5 +276,6 @@
     });
   }
 </script>
+
 </body>
 </html>
