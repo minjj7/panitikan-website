@@ -170,9 +170,12 @@
 <script>
   const loader = document.getElementById("loader");
 
+  // CLICK HANDLER (with memory fix)
   document.querySelectorAll(".topic-link").forEach(link => {
     link.addEventListener("click", function(e) {
       e.preventDefault();
+
+      sessionStorage.setItem("fromTopics", "true");
 
       const destination = this.href;
       loader.style.display = "flex";
@@ -183,6 +186,19 @@
     });
   });
 
+  // BACK BUTTON FIX
+  window.addEventListener("pageshow", function() {
+    const fromTopics = sessionStorage.getItem("fromTopics");
+
+    if (fromTopics === "true") {
+      loader.style.display = "none";
+      sessionStorage.removeItem("fromTopics");
+
+      document.getElementById("topics")?.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
+  // safety hide loader on normal load
   window.addEventListener("load", () => {
     loader.style.display = "none";
   });
