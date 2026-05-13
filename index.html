@@ -3,411 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panitikan</title>
-
+  <title>Home | Panitikan</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* BODY + BACKGROUND IMAGE */
     body {
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-
-      /* CHANGE THIS IMAGE */
-      background:
-        linear-gradient(
-          rgba(0,0,0,0.45),
-          rgba(0,0,0,0.45)
-        ),
-        url('mainpage.jpg');
-
+      
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('mainpage.jpg');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
       background-attachment: fixed;
     }
 
-    body.loaded {
-      opacity: 1;
-    }
-
-    /* LOADER */
-    #loader {
-      transition: opacity 0.3s ease;
-    }
-
-    #loader.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    /* PEN ANIMATION */
-    @keyframes penMove {
-
-      0% {
-        left: 0;
-        transform: rotate(-10deg);
-      }
-
-      50% {
-        transform: rotate(8deg);
-      }
-
-      100% {
-        left: 120px;
-        transform: rotate(-10deg);
-      }
-
-    }
-
-    .animate-pen {
-      animation: penMove 2.2s infinite ease-in-out;
-    }
-
+  
   </style>
 </head>
 
-<body class="font-sans text-white">
+<body class="text-white">
 
-  <!-- LOADER -->
-  <div id="loader"
-       class="fixed inset-0 bg-[#f8f1e7] flex flex-col items-center justify-center z-50 hidden">
+<!-- NAV -->
+<header class="flex justify-between items-center p-6 bg-black/40 backdrop-blur-md">
+  <h1 class="font-bold text-xl">Panitikang Pilipino</h1>
 
-    <div class="relative w-40 h-20">
+  <nav class="flex gap-6 font-semibold">
+    <a href="index.html">Home</a>
+    <a href="topics.html">Topics</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
 
-      <div class="absolute top-10 left-0 w-32 h-1 bg-gray-400"></div>
+<!-- CONTENT -->
+<main class="text-center mt-32 px-6">
 
-      <div class="absolute top-4 left-0 text-4xl animate-pen">
-        ✒️
-      </div>
+  <h2 class="text-5xl font-bold mb-6">PANITIKAN</h2>
 
-    </div>
+  <p class="text-lg max-w-2xl mx-auto">
+    Ang panitikan ay tumutukoy sa mga akdang nagpapahayag ng damdamin,
+    kaisipan, at karanasan ng tao sa pamamagitan ng malikhaing paggamit ng wika.
+  </p>
 
-    <p id="loadingText"
-       class="mt-6 text-lg font-semibold text-gray-700">
-      Naglo-load...
-    </p>
+</main>
 
-  </div>
-
-  <!-- HEADER -->
-  <header class="bg-black/40 backdrop-blur-md shadow sticky top-0 z-40">
-
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-
-      <!-- TITLE -->
-      <div>
-
-        <h1 class="text-2xl font-bold">
-          Panitikang Pilipino
-        </h1>
-
-        <p class="text-gray-200 text-sm">
-          Mga Akdang Tuluyan o Prosa
-        </p>
-
-      </div>
-
-      <!-- NAVIGATION -->
-      <nav class="flex gap-6 text-white font-semibold">
-
-        <a href="#home"
-           class="hover:text-yellow-300 transition">
-          Home
-        </a>
-
-        <a href="#topics"
-           class="hover:text-yellow-300 transition">
-          Topics
-        </a>
-
-        <a href="#about"
-           class="hover:text-yellow-300 transition">
-          About
-        </a>
-
-      </nav>
-
-    </div>
-
-  </header>
-
-  <!-- HOME -->
-  <section id="home"
-           class="max-w-3xl mx-auto mt-10 p-8 bg-white/15 backdrop-blur-md rounded-2xl shadow-lg text-center">
-
-    <h2 class="text-3xl font-bold mb-4">
-      PANITIKAN
-    </h2>
-
-    <p class="leading-relaxed text-gray-100">
-
-      Ang panitikan ay tumutukoy sa mga akdang nagpapahayag ng damdamin,
-      kaisipan, at karanasan ng tao sa pamamagitan ng malikhaing paggamit
-      ng wika. Ito ay mahalagang bahagi ng kultura at kasaysayan ng bawat
-      bansa sapagkat dito naipapahayag ang mga tradisyon, paniniwala,
-      at pamumuhay ng mga tao.
-
-    </p>
-
-  </section>
-
-  <!-- TOPICS -->
-  <section id="topics"
-           class="max-w-6xl mx-auto px-6 py-12">
-
-    <h2 class="text-3xl font-bold text-center mb-8">
-      Mga Paksa
-    </h2>
-
-    <!-- GRID -->
-    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- CARD -->
-      <a href="alamat.html"
-         onclick="goPage(event,'alamat.html')"
-         class="block rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 bg-white/10 backdrop-blur-md">
-
-        <img src="https://source.unsplash.com/800x400/?legend"
-             class="w-full h-48 object-cover">
-
-        <div class="p-4 font-semibold text-center">
-          ALAMAT
-        </div>
-
-      </a>
-
-      <!-- CARD -->
-      <a href="anekdota.html"
-         onclick="goPage(event,'anekdota.html')"
-         class="block rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 bg-white/10 backdrop-blur-md">
-
-        <img src="https://source.unsplash.com/800x400/?story"
-             class="w-full h-48 object-cover">
-
-        <div class="p-4 font-semibold text-center">
-          ANEKDOTA
-        </div>
-
-      </a>
-
-      <!-- CARD -->
-      <a href="pabula.html"
-         onclick="goPage(event,'pabula.html')"
-         class="block rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 bg-white/10 backdrop-blur-md">
-
-        <img src="https://source.unsplash.com/800x400/?animal"
-             class="w-full h-48 object-cover">
-
-        <div class="p-4 font-semibold text-center">
-          PABULA
-        </div>
-
-      </a>
-
-      <!-- CARD -->
-      <a href="parabula.html"
-         onclick="goPage(event,'parabula.html')"
-         class="block rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 bg-white/10 backdrop-blur-md">
-
-        <img src="https://source.unsplash.com/800x400/?light"
-             class="w-full h-48 object-cover">
-
-        <div class="p-4 font-semibold text-center">
-          PARABULA
-        </div>
-
-      </a>
-
-      <!-- CARD -->
-      <a href="sanaysay.html"
-         onclick="goPage(event,'sanaysay.html')"
-         class="block rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 bg-white/10 backdrop-blur-md">
-
-        <img src="https://source.unsplash.com/800x400/?writing"
-             class="w-full h-48 object-cover">
-
-        <div class="p-4 font-semibold text-center">
-          SANAYSAY
-        </div>
-
-      </a>
-
-      <!-- CARD -->
-      <a href="talambuhay.html"
-         onclick="goPage(event,'talambuhay.html')"
-         class="block rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 bg-white/10 backdrop-blur-md">
-
-        <img src="https://source.unsplash.com/800x400/?person"
-             class="w-full h-48 object-cover">
-
-        <div class="p-4 font-semibold text-center">
-          TALAMBUHAY
-        </div>
-
-      </a>
-
-      <!-- CARD -->
-      <a href="talumpati.html"
-         onclick="goPage(event,'talumpati.html')"
-         class="block rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 bg-white/10 backdrop-blur-md">
-
-        <img src="https://source.unsplash.com/800x400/?speech"
-             class="w-full h-48 object-cover">
-
-        <div class="p-4 font-semibold text-center">
-          TALUMPATI
-        </div>
-
-      </a>
-
-      <!-- CARD -->
-      <a href="balita.html"
-         onclick="goPage(event,'balita.html')"
-         class="block rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 bg-white/10 backdrop-blur-md">
-
-        <img src="https://source.unsplash.com/800x400/?news"
-             class="w-full h-48 object-cover">
-
-        <div class="p-4 font-semibold text-center">
-          BALITA
-        </div>
-
-      </a>
-
-      <!-- CARD -->
-      <a href="nobela.html"
-         onclick="goPage(event,'nobela.html')"
-         class="block rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 bg-white/10 backdrop-blur-md">
-
-        <img src="https://source.unsplash.com/800x400/?book"
-             class="w-full h-48 object-cover">
-
-        <div class="p-4 font-semibold text-center">
-          NOBELA
-        </div>
-
-      </a>
-
-      <!-- CARD -->
-      <a href="maiklingkwento.html"
-         onclick="goPage(event,'maiklingkwento.html')"
-         class="block rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 bg-white/10 backdrop-blur-md">
-
-        <img src="https://source.unsplash.com/800x400/?reading"
-             class="w-full h-48 object-cover">
-
-        <div class="p-4 font-semibold text-center">
-          MAIKLING KUWENTO
-        </div>
-
-      </a>
-
-      <!-- CARD -->
-      <a href="dula.html"
-         onclick="goPage(event,'dula.html')"
-         class="block rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 bg-white/10 backdrop-blur-md">
-
-        <img src="https://source.unsplash.com/800x400/?theater"
-             class="w-full h-48 object-cover">
-
-        <div class="p-4 font-semibold text-center">
-          DULA
-        </div>
-
-      </a>
-
-      <!-- CARD -->
-      <a href="mitolohiya.html"
-         onclick="goPage(event,'mitolohiya.html')"
-         class="block rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 bg-white/10 backdrop-blur-md">
-
-        <img src="https://source.unsplash.com/800x400/?myth"
-             class="w-full h-48 object-cover">
-
-        <div class="p-4 font-semibold text-center">
-          MITOLOHIYA
-        </div>
-
-      </a>
-
-    </main>
-
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about"
-           class="max-w-3xl mx-auto mb-10 p-8 bg-white/15 backdrop-blur-md rounded-2xl shadow-lg text-center">
-
-    <h2 class="text-3xl font-bold mb-4">
-      About
-    </h2>
-
-    <p class="text-gray-100 mb-6">
-      Ang website na ito ay ginawa upang makatulong sa pag-aaral
-      ng Panitikang Pilipino at iba’t ibang uri ng akdang tuluyan o prosa.
-    </p>
-
-    <div class="space-y-2 font-semibold">
-
-      <p>Created By:</p>
-
-      <p>Your Name Here</p>
-      <p>Member 2</p>
-      <p>Member 3</p>
-
-    </div>
-
-  </section>
-
-  <!-- SCRIPT -->
-  <script>
-
-    // PAGE FADE
-    window.addEventListener("load", () => {
-      document.body.classList.add("loaded");
-    });
-
-    // LOADING TEXT
-    const texts = [
-      "Naglo-load...",
-      "Ipinoproseso...",
-      "Pakihintay..."
-    ];
-
-    let i = 0;
-
-    setInterval(() => {
-
-      document.getElementById("loadingText").textContent = texts[i];
-
-      i = (i + 1) % texts.length;
-
-    }, 900);
-
-    // PAGE TRANSITION
-    function goPage(event, url) {
-
-      event.preventDefault();
-
-      const loader = document.getElementById("loader");
-
-      loader.classList.remove("hidden");
-
-      document.body.classList.remove("loaded");
-
-      setTimeout(() => {
-        window.location.href = url;
-      }, 700);
-
-    }
-
-  </script>
 
 </body>
 </html>
