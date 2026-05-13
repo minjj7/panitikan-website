@@ -51,6 +51,17 @@
       font-weight: bold;
       letter-spacing: 3px;
     }
+
+    /* cursor blink */
+    .cursor {
+      display: inline-block;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
   </style>
 </head>
 
@@ -59,7 +70,10 @@
 <!-- LOADER -->
 <div id="loader">
   <img src="./pen.png" alt="Pen" class="pen-loader">
-  <div class="loading-text">NAGSUSULAT...</div>
+
+  <div class="loading-text">
+    <span id="typingText"></span><span class="cursor">|</span>
+  </div>
 </div>
 
 <!-- NAV -->
@@ -166,15 +180,35 @@
   </div>
 </section>
 
+<!-- SCRIPT -->
 <script>
   const loader = document.getElementById("loader");
+  const typingText = document.getElementById("typingText");
 
-  // 1. Set proper history state when entering Topics page
+  const word = "NAGSUSULAT...";
+  let i = 0;
+
+  function typeWriter(callback) {
+    typingText.innerHTML = "";
+    i = 0;
+
+    function typing() {
+      if (i < word.length) {
+        typingText.innerHTML += word.charAt(i);
+        i++;
+        setTimeout(typing, 80);
+      } else {
+        if (callback) callback();
+      }
+    }
+
+    typing();
+  }
+
   window.addEventListener("load", () => {
     history.replaceState({ page: "topics" }, "");
   });
 
-  // 2. Handle topic clicks with loader
   document.querySelectorAll(".topic-link").forEach(link => {
     link.addEventListener("click", function(e) {
       e.preventDefault();
@@ -183,16 +217,18 @@
 
       loader.style.display = "flex";
 
-      setTimeout(() => {
-        window.location.href = destination;
-      }, 900);
+      typeWriter(() => {
+        setTimeout(() => {
+          window.location.href = destination;
+        }, 300);
+      });
     });
   });
 
-  // 3. Handle back/forward navigation properly
   window.addEventListener("pageshow", () => {
     loader.style.display = "none";
   });
 </script>
+
 </body>
 </html>
