@@ -166,18 +166,21 @@
   </div>
 </section>
 
-<!-- SCRIPT -->
 <script>
   const loader = document.getElementById("loader");
 
-  // CLICK HANDLER (with memory fix)
+  // 1. Set proper history state when entering Topics page
+  window.addEventListener("load", () => {
+    history.replaceState({ page: "topics" }, "");
+  });
+
+  // 2. Handle topic clicks with loader
   document.querySelectorAll(".topic-link").forEach(link => {
     link.addEventListener("click", function(e) {
       e.preventDefault();
 
-      sessionStorage.setItem("fromTopics", "true");
-
       const destination = this.href;
+
       loader.style.display = "flex";
 
       setTimeout(() => {
@@ -186,27 +189,9 @@
     });
   });
 
-  // BACK BUTTON FIX
-  window.addEventListener("pageshow", function() {
-    const fromTopics = sessionStorage.getItem("fromTopics");
-
-    if (fromTopics === "true") {
-      loader.style.display = "none";
-      sessionStorage.removeItem("fromTopics");
-
-      document.getElementById("topics")?.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-
-  // safety hide loader on normal load
-  window.addEventListener("load", () => {
+  // 3. Handle back/forward navigation properly
+  window.addEventListener("pageshow", () => {
     loader.style.display = "none";
-  });
-</script>
-<script>
-  // mark Topics as a proper history checkpoint
-  window.addEventListener("load", () => {
-    history.replaceState({ page: "topics" }, "");
   });
 </script>
 </body>
