@@ -180,8 +180,9 @@
   </div>
 </section>
 
-<!-- SCRIPT -->
 <script>
+window.addEventListener("DOMContentLoaded", () => {
+
   const loader = document.getElementById("loader");
   const typingText = document.getElementById("typingText");
 
@@ -205,16 +206,15 @@
     typing();
   }
 
-  window.addEventListener("load", () => {
-    history.replaceState({ page: "topics" }, "");
-  });
+  // history fix
+  history.replaceState({ page: "topics" }, "");
 
+  // click handler
   document.querySelectorAll(".topic-link").forEach(link => {
     link.addEventListener("click", function(e) {
       e.preventDefault();
 
       const destination = this.href;
-
       loader.style.display = "flex";
 
       typeWriter(() => {
@@ -225,9 +225,12 @@
     });
   });
 
+  // safety loader reset
   window.addEventListener("pageshow", () => {
     loader.style.display = "none";
   });
+
+});
 </script>
 
 </body>
